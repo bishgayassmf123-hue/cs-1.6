@@ -1,4 +1,3 @@
-/* Общий вид */
 body {
     background: radial-gradient(circle, #1a1a1a 0%, #050505 100%);
     color: #e0e0e0;
@@ -13,7 +12,6 @@ table {
     border-spacing: 0 4px; /* Отступы между строками */
 }
 
-/* Заголовок таблицы */
 th {
     background: #111;
     color: #00eaff;
@@ -25,7 +23,6 @@ th {
     text-shadow: 0 0 8px rgba(0, 234, 255, 0.6);
 }
 
-/* Строки таблицы */
 td {
     background: rgba(255, 255, 255, 0.03);
     padding: 10px 5px;
@@ -34,34 +31,32 @@ td {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Эффект при наведении (в Steam работает) */
 tr:hover td {
     background: rgba(0, 234, 255, 0.1);
     color: #fff;
 }
 
-/* Стили для колонок */
-.p { /* Позиция */
+.p { 
     color: #ffcc00;
     font-weight: bold;
     font-size: 14px;
     text-shadow: 0 0 5px rgba(255, 204, 0, 0.4);
 }
 
-.n { /* Никнейм */
+.n { 
     color: #ffffff;
     text-align: left;
     padding-left: 15px;
     font-weight: 600;
 }
 
-.x { /* XP */
+.x { 
     color: #00ff95;
     font-weight: bold;
     text-shadow: 0 0 5px rgba(0, 255, 149, 0.3);
 }
 
-/* Выделение ТОП-3 */
-tr:nth-child(2) .p { color: #ffd700; font-size: 16px; } /* Золото */
-tr:nth-child(3) .p { color: #c0c0c0; } /* Серебро */
-tr:nth-child(4) .p { color: #cd7f32; } /* Бронза */
+
+tr:nth-child(2) .p { color: #ffd700; font-size: 16px; } 
+tr:nth-child(3) .p { color: #c0c0c0; } 
+tr:nth-child(4) .p { color: #cd7f32; } 
