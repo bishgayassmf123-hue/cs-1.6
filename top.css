@@ -1,82 +1,98 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Titillium+Web:wght@400;900&display=swap');
 
-body {
-    background: #050505 linear-gradient(135deg, #050505 0%, #111 50%, #050505 100%);
-    color: #e0e0e0;
-    font-family: 'Orbitron', 'Segoe UI', sans-serif;
+html, body {
+    background: #020202 !important;
+    background-image: 
+        linear-gradient(rgba(0, 234, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 234, 255, 0.05) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, #111 0%, #000 100%) !important;
+    background-size: 30px 30px, 30px 30px, 100% 100% !important;
+    color: #fff;
+    font-family: 'Titillium Web', sans-serif;
     margin: 0;
-    padding: 15px;
+    padding: 20px;
     overflow-x: hidden;
+}
+
+/* Эффект шума/помех на весь экран */
+body::before {
+    content: " ";
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    z-index: 100;
 }
 
 table {
     width: 100%;
     border-collapse: separate;
-    border-spacing: 0 6px;
+    border-spacing: 0 10px;
+    position: relative;
 }
 
+/* Заголовок: Неоновая рампа */
 th {
+    font-family: 'Syncopate', sans-serif;
     background: #000;
     color: #00eaff;
-    text-transform: uppercase;
-    font-size: 11px;
-    letter-spacing: 2px;
-    padding: 15px 5px;
-    border-top: 1px solid #00eaff;
-    border-bottom: 2px solid #00eaff;
-    box-shadow: 0 4px 15px rgba(0, 234, 255, 0.2);
+    font-size: 10px;
+    padding: 20px 5px;
+    border-left: 5px solid #00eaff;
+    border-right: 5px solid #00eaff;
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.4);
     text-shadow: 0 0 10px #00eaff;
+    letter-spacing: 5px;
 }
 
+/* Строки: Хай-тек пластины */
 td {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 12px 5px;
-    text-align: center;
-    font-size: 12px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
-}
-
-tr:hover td {
-    background: rgba(0, 234, 255, 0.15) !important;
-    color: #fff;
-    border-top: 1px solid #00eaff;
-    transform: scale(1.01); 
-}
-
-tr:nth-child(2) td {
-    background: linear-gradient(90deg, rgba(255,215,0,0.05) 0%, rgba(255,215,0,0.1) 50%, rgba(255,215,0,0.05) 100%);
-    border-left: 3px solid #ffd700;
-}
-
-.p { 
-    font-weight: bold;
-    font-size: 15px;
-}
-
-
-tr:nth-child(2) .p { color: #ffd700; text-shadow: 0 0 15px #ffd700; } /* Золото */
-tr:nth-child(3) .p { color: #e5e4e2; text-shadow: 0 0 10px #e5e4e2; } /* Платина/Серебро */
-tr:nth-child(4) .p { color: #cd7f32; text-shadow: 0 0 10px #cd7f32; } /* Бронза */
-
-.n { 
-    color: #fff;
-    text-align: left;
-    padding-left: 20px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-}
-
-.x { 
-    color: #00ff95;
-    font-weight: bold;
-    font-family: monospace;
+    background: linear-gradient(90deg, rgba(15,15,15,0.9) 0%, rgba(30,30,30,0.9) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 15px 5px;
     font-size: 14px;
-    text-shadow: 0 0 8px rgba(0, 255, 149, 0.5);
+    transition: 0.3s;
 }
 
+/* Индивидуальное свечение колонок */
+.p { font-family: 'Syncopate', sans-serif; font-size: 20px; color: #444; } /* По дефолту серые */
+.x { color: #00ff95; font-weight: 900; text-shadow: 0 0 15px rgba(0, 255, 149, 0.5); }
+.n { text-align: left; padding-left: 30px; font-weight: 900; letter-spacing: 1px; }
 
-td:nth-child(5), td:nth-child(6) {
-    color: #888;
+/* ТОП-1: КИБЕР-БОСС */
+tr:nth-child(2) td {
+    background: linear-gradient(90deg, #1a1500 0%, #332b00 100%);
+    border: 1px solid #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+tr:nth-child(2) .p { color: #ffd700 !important; text-shadow: 0 0 25px #ffd700; animation: blink 1s infinite; }
+tr:nth-child(2) .n { color: #ffd700; }
+
+/* ТОП-2 и ТОП-3 */
+tr:nth-child(3) .p { color: #00eaff !important; text-shadow: 0 0 15px #00eaff; }
+tr:nth-child(4) .p { color: #ff4444 !important; text-shadow: 0 0 15px #ff4444; }
+
+/* Эффект при наведении: "Захват цели" */
+tr:hover td {
+    background: #00eaff !important;
+    color: #000 !important;
+    transform: translateX(10px); /* Строка сдвигается вправо */
+}
+tr:hover .p, tr:hover .x, tr:hover .n { color: #000 !important; text-shadow: none !important; }
+
+/* Анимация мигания для ТОП-1 */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Скроллбар будущего */
+::-webkit-scrollbar { width: 6px; background: #000; }
+::-webkit-scrollbar-thumb { 
+    background: linear-gradient(#00eaff, #ff00ff); 
+    border-radius: 10px; 
 }
